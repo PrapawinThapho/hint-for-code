@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พี่เจ้านายเจ้าชู้</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+        *{
+        font-family: "Itim", cursive;
+        font-weight: 400;
+        font-style: normal;
+        }
+    </style>
+</head>
+
+{% block content %}
+<body style="background-color:rgb(202, 255, 217);">
+    <div class="container">
+        <br><br><br>
+        <h1 style="text-align: center; font-size: 50px;">สวัสดีน้องรหัสที่น่ารักและพี่ๆบางคนที่อยากรู้ว่าลิ้งค์นี้คืออะไร</h1>
+        <h2 style="text-align: center; font-size: 25px;">พี่แค่ไม่อยากใบ้คำใบ้โต้งๆ พี่ก็เลยทำเว็บนี้ขึ้นมา โดยที่น้องชายจะต้องตอบคำถามข้างล่างนี้ให้หมด ในแต่ละคำถามถ้าน้องชายตอบถูก จะได้ password คำถามละ 1 ตัวอักษร ซึ่งเมื่อรวบรวม password จนได้เป็นคำที่สมบูรณ์แล้ว ให้น้องชายเอา password ที่ได้ไปใส่ในช่องใส่รหัส แล้วคำใบ้จริงๆจะเด้งขึ้นมา</h2><br><br>
+        <p style="text-align: center; display: inline; font-size: 40px;">password : </p>
+
+        {% for n in word %}
+            <p style="display: inline; font-size: 40px;">{{n}} </p>
+        {% endfor %}
+
+        <br><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q0(class = "form-control")}}<br>
+            {{form.submit0(class="btn btn-success")}}<br>
+        </form>
+
+        <br>
+        {% if hint1 == False and hint2 == False %}
+
+        {% elif hint1 == True %}
+            <p style="text-align: center; display: inline; font-size: 40px; color: rgb(172, 0, 0); background-color: aliceblue;">คำใบ้ : พี่พอเขียนโค้ดได้บ้าง ที่จริงที่พี่เลือกทำเป็นเว็บเพราะจะได้ทำให้ดูด้วยนี่แหละ ว่าพอเขียนได้บ้างจริงๆ 555555555 </p>
+        {% elif hint2 == True %}
+            <p style="text-align: center; display: inline; font-size: 40px; color: rgb(172, 0, 0); background-color: aliceblue;">คำใบ้ : พี่ชอบสีเขียว ไม่งั้นพี่ไม่เลือกพื้นหลังสีเขียวกับปุ่มสีเขียวหรอก</p>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>ไม่มั่วคำตอบน้าาา</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br><br><br><br>
+
+        <h1>คำถามที่ 1</h1>
+        <h2 style="font-size: 25px;">พี่โมกข์ชอบกินอะไร มีช่วงนึงกินทุกวันเลย พอช่วงหลังไม่กินก็เอาเชื้อมาแพร่เพื่อน เพื่อนกินอันนั้นอย่างเดียวเลย ส่วนไอ้โมกข์นั่งกินข้าวอยู่หอ (ถามเจ้าตัวได้ ig : doughmokh)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q1(class = "form-control")}}<br>
+            {{form.submit1(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q1 == False %}
+
+        {% elif q1 == "ก๋วยเตี๋ยว" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 2</h1>
+        <h2 style="font-size: 25px;">พี่หนุนนี่ใส่รองเท้าเบอร์อะไร (ถามเจ้าตัวได้ ig : nn.noonny)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q2(class = "form-control")}}<br>
+            {{form.submit2(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q2 == False %}
+
+        {% elif q2 == "43" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 3</h1>
+        <h2 style="font-size: 25px;">พี่เบส(base)ทำบัวลอยให้ใครกิน พี่เบสเป็นเด็กกตัญญูมาก น้องๆดูเป็นตัวอย่างนะครับ (ถามเจ้าตัวได้ ig : babase_56170)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q3(class = "form-control")}}<br>
+            {{form.submit3(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q3 == False %}
+
+        {% elif q3 == "แม่" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 4</h1>
+        <h2 style="font-size: 25px;">พี่กิตสูงกี่เซน (ใส่แค่ตัวเลขนะ) (ถามเจ้าตัวได้ ig : itskitthada)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q4(class = "form-control")}}<br>
+            {{form.submit4(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q4 == False %}
+
+        {% elif q4 == "183" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 5</h1>
+        <h2 style="font-size: 25px;">พี่คนนี้ชื่ออะไร (คนนี้เจ้าชู้นะ น้องระวังตัวให้ดีนะ ผู้ชายหรือผู้หญิงพี่เขาก็ชอบ)</h2><br>
+        <img src="../static/JN.jpg" alt="" style="height: 50%; width: 50%; vertical-align: middle;" class="center"><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q5(class = "form-control")}}<br>
+            {{form.submit5(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q5 == False %}
+
+        {% elif q5 == "เจ้านาย" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 6</h1>
+        <h2 style="font-size: 25px;">ใครคือพี่หมื่น มก. (ใส่แค่ชื่อเล่นพอนะ) (เหมือนจะมีในไฮไลท์ ig : chempee_intania)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q6(class = "form-control")}}<br>
+            {{form.submit6(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q6 == False %}
+
+        {% elif q6 == "เขม" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 7</h1>
+        <h2 style="font-size: 25px;">พี่หมีใส่รีเทนเนอร์สีอะไร (ถามเจ้าตัวได้ ig : z__________p__________z)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q7(class = "form-control")}}<br>
+            {{form.submit7(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q7 == False %}
+
+        {% elif q7 == "แดง" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 8</h1>
+        <h2 style="font-size: 25px;">ลิปตันขวด 445 มล. ที่เซเว่นขายกี่บาท (อันนี้อร่อยมาก)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q8(class = "form-control")}}<br>
+            {{form.submit8(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q8 == False %}
+
+        {% elif q8 == "20" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 9</h1>
+        <h2 style="font-size: 25px;">พี่กิตชอบกินน้ำปั่นอะไร สีส้มๆ กินแล้วพี่กิตจะไม่เป็นมะเร็ง จะรวยล้นฟ้าจนต้องวิ่งไปบอกแม่ (ไม่ต้องใส่คำว่าน้ำกับปั่นนะ)(ถามเจ้าตัวได้ ig : itskitthada)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q9(class = "form-control")}}<br>
+            {{form.submit9(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q9 == False %}
+
+        {% elif q9 == "แครอท" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+        <h1>คำถามที่ 10</h1>
+        <h2 style="font-size: 25px;">หมาที่พี่พีมเลี้ยงชื่อว่าอะไร (พิมพ์ภาษาอังกฤษพิมพ์เล็กนะ ชื่อเหมือนขนมยี่ห้อหนึ่ง) (ถามเจ้าตัวได้ ig : preexaam_)</h2><br>
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            {{form.q10(class = "form-control")}}<br>
+            {{form.submit10(class="btn btn-success")}}
+        </form>
+        <br>
+        {% if q10 == False %}
+
+        {% elif q10 == "pocky" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>ถูกต้อง!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>อันนี้ไม่ถูกอะ!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        <br>
+
+    </div>
+
+{% endblock %}
+</body>
+</html>
